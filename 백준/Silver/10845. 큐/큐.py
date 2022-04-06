@@ -7,13 +7,17 @@ for _ in range(int(input())):
     cmd, *arg = input().split()
     if cmd == "pop":
         print(que.popleft() if que else -1)
-    elif cmd == "size":
+        continue
+    if cmd == "size":
         print(len(que))
-    elif cmd == "empty":
+        continue
+    if cmd == "empty":
         print(int(len(que) == 0))
-    elif cmd == "front":
+        continue
+    if cmd == "front":
         print(que[0] if que else -1)
-    elif cmd == "back":
+        continue
+    if cmd == "back":
         print(que[-1] if que else -1)
-    else:
-        que.append(arg[0])
+        continue
+    que.append(arg[0])
