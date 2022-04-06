@@ -1,23 +1,22 @@
 import sys
 input = sys.stdin.readline
 
-from collections import deque
-que = deque()
+que = []
 for _ in range(int(input())):
     cmd, *arg = input().split()
-    if cmd == "pop":
-        print(que.popleft() if que else -1)
+    if "po" in cmd:
+        print(que.pop(0) if que else -1)
         continue
-    if cmd == "size":
+    if "z" in cmd:
         print(len(que))
         continue
-    if cmd == "empty":
+    if "e" in cmd:
         print(int(len(que) == 0))
         continue
-    if cmd == "front":
+    if "f" in cmd:
         print(que[0] if que else -1)
         continue
-    if cmd == "back":
+    if "b" in cmd:
         print(que[-1] if que else -1)
         continue
     que.append(arg[0])
