@@ -10,7 +10,7 @@ for l in range(1, N):
     for y in range(N-l):
         x = y + l
         m = sizes[y] * sizes[x+1]
-        min_yx = min(dp[y][k] + dp[x][k+1] + sizes[k+1] * m for k in range(y, x))
+        min_yx = min(yk + xk + sz * m for yk, xk, sz in zip(dp[y][y:x], dp[x][y+1:x+1], sizes[y+1:x+1]))
         dp[y][x] = dp[x][y] = min_yx
 
 print(dp[0][-1])
